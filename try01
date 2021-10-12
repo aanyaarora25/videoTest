@@ -1,0 +1,17 @@
+import processing.video.*;
+
+Capture video;
+
+void setup(){
+  size (1000,1000);
+  video = new Capture(this,650,450,50);
+  video.start ();
+}
+
+void draw(){
+  video.read();
+  background (0);
+  tint(255,mouseX,mouseY);
+  image(video,0,0,mouseX,mouseY);
+  
+}
